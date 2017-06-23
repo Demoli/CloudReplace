@@ -2,7 +2,7 @@ import urllib3
 import json
 
 
-class CloudReplaceClient(object):
+class Client(object):
     url = 'http://localhost:5000/replace'
 
     def replace(self, subject, search, replace):
@@ -19,6 +19,6 @@ class CloudReplaceClient(object):
 
 
 if __name__ == '__main__':
-    replace = CloudReplaceClient()
+    replace = Client()
     result = replace.replace('Hello World!', 'Hello', 'Goodbye')
     print(result)

@@ -30,6 +30,6 @@ Simply POST a JSON string to `/replace` containing your subject string, search s
     }
 
 ## Python client
-
-    replace = StrReplaceClient()
+    from cloud_replace.client import Client
+    replace = Client()
     replace.replace('Hello World!', 'Hello', 'Goodbye')
