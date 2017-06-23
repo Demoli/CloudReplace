@@ -19,6 +19,7 @@ Simply POST a JSON string to `/replace` containing your subject string, search s
       "subject":"Hello World!",
       "search":"Hello",
       "replace":"Goodbye"
+      'ignore_case':true
     }
 
 ### Response

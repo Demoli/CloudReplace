@@ -1,10 +1,11 @@
 from flask import Flask
-from flask import render_template
 from flask import request
 from flask import jsonify
 
 import json
 import markdown
+
+import re
 
 app = Flask(__name__)
 
@@ -38,7 +39,11 @@ def replace():
     missing_args = [param for param in expected_args if param not in list(data.keys())]
     if (len(missing_args)):
         raise InvalidRequest("Missing argument(s) {}".format(', '.join(missing_args)))
-    data['result'] = data['subject'].replace(data['search'], data['replace'])
+    re_flags = 0
+    if 'ignore_case' in data.keys():
+        re_flags = re.IGNORECASE
+    pattern = re.compile(re.escape(data['search']), re_flags)
+    data['result'] = pattern.sub(data['replace'], data['subject'])
     return jsonify(data)
 
 
