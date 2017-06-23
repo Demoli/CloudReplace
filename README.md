@@ -3,15 +3,15 @@
 ## What is it?
 Cloud Replace utilises the power of the cloud to do string replacements.
 
-Why use old, outdated methods for string replacement when you can utilise a modern, trendy RESTful service
+Why use old, outdated methods for string replacement when you can utilise a modern, trendy RESTful service?
 
 ## What's in this repo
 
-This repo contains both the server and python client so you can either use [URL TBC] or host your own instance 
+This repo contains both the server and python client so you can either use [URL TBC] or host your own instance.
 
 ## How do I use it
 
-Simply POST a JSON string to `/replace` containing your subject string, search string and replacement string
+Simply POST a JSON string to `/replace` containing your subject string, search string and replacement string.
 
 ### Request
 
@@ -31,5 +31,5 @@ Simply POST a JSON string to `/replace` containing your subject string, search s
 
 ## Python client
 
-    replace = StrReplaceClient()
+    replace = CloudReplaceClient()
     replace.replace('Hello World!', 'Hello', 'Goodbye')
